@@ -14,24 +14,35 @@ void straight(int n);
 int main()
 {
 	int n;
-	char fgr[1000];
-	printf("chose figure: bsu | rsu | lsu | bsd | rsd | lsd | bsc | rsc | lsc | s \n");
-	scanf(" %[^\t\n]s", &fgr);
+	int fgr;
+	printf("chose figure number: 1 - bsu | 2 - rsu | 3 - lsu | 4 - bsd | 5 - rsd | 6 - lsd | 7 - bsc | 8 - rsc | 9 - lsc | 10 - s \n");
+	scanf(" %d", &fgr);
 	printf("print n: ");
 	scanf(" %d",&n);
 	
 	switch (fgr)
 	{
-		case bsu: both_side_up(n);
-		case rsu: right_side_up(n);
-		case lsu: left_side_up(n);
-		case bsd: both_side_down(n);
-		case rsd: right_side_down(n);
-		case lsd: left_side_down(n);
-		case bsc: both_side_center(n);
-		case rsc: right_side_center(n);
-		case lsc: left_side_center(n);
-		case s: straight(n); 
+		case 1: both_side_up(n);
+			break;
+		case 2: right_side_up(n);
+			break;
+		case 3: left_side_up(n);
+			break;
+		case 4: both_side_down(n);
+			break;
+		case 5: right_side_down(n);
+			break;
+		case 6: left_side_down(n);
+			break;
+		case 7: both_side_center(n);
+			break;
+		case 8: right_side_center(n);
+			break;
+		case 9: left_side_center(n);
+			break;
+		case 10: straight(n); 
+			 break;
+		default: printf("wrong figure number");
 	}
 	
 	return 0;
@@ -127,7 +138,7 @@ void both_side_center(int n)
 {
 	for (int i=1; i<=(n+1)/2; i++)
 	{
-		for (int j=0; j<n-i; j++)
+		for (int j=0; j<((n+1)/2)-i; j++)
 		{
 			printf(" ");	
 		}
@@ -139,7 +150,7 @@ void both_side_center(int n)
 	}
 	for (int i=((n+1)/2)-1; i>=1; i--)
 	{
-		for (int j=0; j<n-i; j++)
+		for (int j=0; j<((n+1)/2)-i; j++)
 		{
 			printf(" ");	
 		}
@@ -175,7 +186,7 @@ void left_side_center(int n)
 {
 	for (int i=1; i<=(n+1)/2; i++)
 	{
-		for (int j=0; j<n-i; j++)
+		for (int j=0; j<((n+1)/2)-i; j++)
 		{
 			printf(" ");	
 		}
@@ -187,7 +198,7 @@ void left_side_center(int n)
 	}
 	for (int i=((n+1)/2)-1; i>=1; i--)
 	{
-		for (int j=0; j<n-i; j++)
+		for (int j=0; j<((n+1)/2)-i; j++)
 		{
 			printf(" ");	
 		}
