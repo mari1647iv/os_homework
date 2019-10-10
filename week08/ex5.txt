@@ -1,0 +1,2 @@
+Virtual address is  program-generated address, that is pointing to some placce in virtual memory.
+Physical address is actual address in main memory.
