@@ -21,7 +21,7 @@ Page_frame *aging_reference(Pages *pages, int val);
 int main()
 {
     FILE *fp;
-    fp = fopen("Lab 09 input.txt", "w");
+    fp = fopen("C://lab9//Lab 09 input.txt", "r");
     if ( fp == NULL ) 
     { 
         printf( "Lab 09 input.txt file failed to open.\n" ) ; 
@@ -39,19 +39,19 @@ int main()
 
     while(i<n) 
     { 
-        fscanf(fp, "%d", &page_reference);
-        printf("Reference page %d\n", page_reference);
-        fscanf(fp, "%[^ ]", &page_reference);
-        ++i;
+        fscanf(fp, "%d%*c ", &page_reference);
+        printf("%d: ", page_reference);
+        printf("Reference page %d.\n", aging_reference(p, page_reference)->value);
+        i++;
     }
-    printf("All pages was created referenced(hit: %d, miss: %d).\n", (p->hit), (p->miss));
+    printf("All pages was created referenced.\n\n"/*, (p->hit), (p->miss)*/);
 
+    printf("hit number: %d\nmiss number: %d\n", (p->hit), (p->miss));
+    printf("hit/miss ratio: %d\n", (p->hit)/(p->miss));
+    
     fclose(fp);
-    printf("File was closed.\n\n");
-
-    printf("hit number: %d\n", (p->hit));
-    printf("miss number: %d\n", (p->miss));
-    printf("hit/miss ratio: %d", (p->hit)/(p->miss));
+    clear(p);
+    printf("File was closed.");
 
     return 0;
 }
