@@ -1,0 +1,7 @@
+chmod 666 _ex3.txt
+chmod 767 _ex3.txt
+chmod 777 _ex3.txt
+
+– 660 - read-write only permission for group owner and file owner (no execute permission), no permissions for other users
+– 775 - all permissions for file owner and group owner, read-execute only permission for other users (no write permission)
+– 777 - all permissions for everybody
